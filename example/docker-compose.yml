@@ -47,7 +47,11 @@ services:
     tty: true
     ports:
       - "8888:8888"
+      - "31000:31000"
+      - "31032:31032"
     environment:
+      - HOST_IP=192.168.1.1
+      - MASTER_HOSTNAME=master
       - JUPYTER_AUTH_TOKEN=password
     networks:
       - yarn_network
