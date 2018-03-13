@@ -47,8 +47,8 @@ services:
     tty: true
     ports:
       - "8888:8888"
-      - "31000:31000"
-      - "31032:31032"
+      - "31000-31004:31000-31004"
+      - "31032-31036:31032-31036"
     environment:
       - HOST_IP=192.168.1.1
       - MASTER_HOSTNAME=master
