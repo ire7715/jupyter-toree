@@ -10,7 +10,9 @@ RUN yum install -y epel-release && \
 
 RUN pip3 install jupyter && \
     pip3 install https://dist.apache.org/repos/dist/dev/incubator/toree/0.2.0-incubating-rc3/toree-pip/toree-0.2.0.tar.gz && \
-    jupyter toree install --spark_home=/usr/local/spark
+    jupyter toree install --spark_home=/usr/local/spark --interpreters=Scala,PySpark
+
+ENV PYTHONPATH=/usr/local/spark/python/:/usr/local/spark/python/lib/py4j-0.10.6-src.zip
 
 RUN jupyter notebook --generate-config && \
     echo "c.Application.log_level = 'DEBUG'" >> ~/.jupyter/jupyter_notebook_config.py && \
