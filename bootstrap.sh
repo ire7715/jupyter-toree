@@ -6,6 +6,7 @@ if [[ -z "$HOST_IP" ]]; then
 else
   echo "spark.driver.bindAddress "$HOSTNAME >> /usr/local/spark/conf/spark-defaults.conf
   echo "spark.driver.host "$HOST_IP >> /usr/local/spark/conf/spark-defaults.conf
+  echo "spark.default.parallelism 200" >> /usr/local/spark/conf/spark-defaults.conf
 fi
 
 if [[ -n "$MASTER_HOSTNAME" ]]; then
