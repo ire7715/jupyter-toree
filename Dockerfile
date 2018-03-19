@@ -1,4 +1,4 @@
-FROM ire7715/yarn-spark:h2.7.5-s2.2.0
+FROM ire7715/yarn-spark:h2.9.0-s2.3.0
 
 RUN curl -s -o /tmp/scala-2.11.12.rpm https://downloads.lightbend.com/scala/2.11.12/scala-2.11.12.rpm && \
     yum install -y /tmp/scala-2.11.12.rpm
