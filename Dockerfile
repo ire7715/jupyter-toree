@@ -14,6 +14,9 @@ RUN pip3 install jupyter && \
 
 ENV PYTHONPATH=/usr/local/spark/python/:/usr/local/spark/python/lib/py4j-0.10.6-src.zip
 
+RUN python /tmp/get-pip.py && \
+    pip2.7 install numpy scipy scikit-learn pandas
+
 RUN jupyter notebook --generate-config && \
     echo "c.Application.log_level = 'DEBUG'" >> ~/.jupyter/jupyter_notebook_config.py && \
     echo "c.NotebookApp.ip = '0.0.0.0'" >> ~/.jupyter/jupyter_notebook_config.py && \
